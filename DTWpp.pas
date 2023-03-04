@@ -34,12 +34,16 @@ type
     FSecretKey: string;
     FSession: string;
     FCaminhoQrCode: string;
+    FURLBase: string;
+    FPorta: string;
     procedure SetSecretKey(const Value: string);
     procedure SetSession(const Value: string);
     procedure SetCaminhoQrCode(const Value: string);
     function BitmapFromBase64(const base64: string): Boolean;
     function FileToBase64(Arquivo : String): String;
     function StreamToBase64(STream: TMemoryStream): String;
+    procedure SetPorta(const Value: string);
+    procedure SetURLBase(const Value: string);
 
   protected
 
@@ -55,13 +59,15 @@ type
        function SendFile(Telefone:string;FileName:string;Mensagem:string;CaminhoDoArquivo:string): Boolean;
 
   published
-    property Session   : string read FSession   write SetSession;
-    property SecretKey : string read FSecretKey write SetSecretKey;
-    property CaminhoQrCode:string read FCaminhoQrCode write SetCaminhoQrCode;
+    property Session       : string read FSession       write SetSession;
+    property SecretKey     : string read FSecretKey     write SetSecretKey;
+    property CaminhoQrCode : string read FCaminhoQrCode write SetCaminhoQrCode;
+    property URLBase       : string read FURLBase       write SetURLBase;
+    property Porta         : string read FPorta         write SetPorta;
   end;
 
-  const
-  URL_Basse = 'http://www.dtloja.com.br:30000/api';
+  //const
+  //FURLBase:FPorta  = 'http://www.dtloja.com.br:30000/api';
 
 procedure Register;
 
@@ -153,7 +159,7 @@ begin
       RequestBody            := TStringStream.Create;
 
       try
-        Response := HttpClient.Post( URL_Basse + '/'+ FSession +'/' + FSecretKey + '/generate-token',
+        Response := HttpClient.Post( FURLBase+':'+FPorta  + '/'+ FSession +'/' + FSecretKey + '/generate-token',
                       RequestBody, nil);
 
         if Response.StatusCode in[ 200, 201 ] then
@@ -208,7 +214,7 @@ begin
       RequestBody := TStringStream.Create;
 
       try
-        Response := HttpClient.Post( URL_Basse + '/'+ FSession +'/logout-session',
+        Response := HttpClient.Post( FURLBase+':'+FPorta  + '/'+ FSession +'/logout-session',
                                      RequestBody,nil,
                                      TNetHeaders.Create(TNameValuePair.Create('Authorization', 'Bearer ' + RetornoAuth.token))
                                      );
@@ -267,7 +273,7 @@ begin
       //RequestBody := TStringStream.Create( Format(REQUEST_BODY , [Telefone,'data:application/pdf;base64,'+sBase64,Mensagem]) );
       RequestBody := TStringStream.Create(REQUEST_BODY);
       try
-        Response := HttpClient.Post( URL_Basse + '/'+ FSession +'/send-file-base64',
+        Response := HttpClient.Post( FURLBase+':'+FPorta  + '/'+ FSession +'/send-file-base64',
                                      RequestBody,nil,
                                      TNetHeaders.Create(TNameValuePair.Create('Authorization', 'Bearer ' + RetornoAuth.token))
                                      );
@@ -320,7 +326,7 @@ begin
       RequestBody := TStringStream.Create( Format(REQUEST_BODY , [Telefone,Mensagem]) );
 
       try
-        Response := HttpClient.Post( URL_Basse + '/'+ FSession +'/send-message',
+        Response := HttpClient.Post( FURLBase+':'+FPorta  + '/'+ FSession +'/send-message',
                                      RequestBody,nil,
                                      TNetHeaders.Create(TNameValuePair.Create('Authorization', 'Bearer ' + RetornoAuth.token))
                                      );
@@ -331,7 +337,7 @@ begin
           // obj := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes( Response.ContentAsString ), 0) as TJSONObject;
 
            Retorno.Mensagem   := Response.ContentAsString;
-           
+
         end else begin
            Result := False;
            raise Exception.Create(Response.StatusCode.ToString + ' ' + Response.StatusText + ' ' + Response.ContentAsString);
@@ -359,6 +365,11 @@ begin
   FCaminhoQrCode := Value;
 end;
 
+procedure TDTWpp.SetPorta(const Value: string);
+begin
+  FPorta := Value;
+end;
+
 procedure TDTWpp.SetSecretKey(const Value: string);
 begin
   FSecretKey := Value;
@@ -367,6 +378,11 @@ end;
 procedure TDTWpp.SetSession(const Value: string);
 begin
   FSession := Value;
+end;
+
+procedure TDTWpp.SetURLBase(const Value: string);
+begin
+  FURLBase := Value;
 end;
 
 function TDTWpp.StartSession: boolean;
@@ -389,7 +405,7 @@ begin
       RequestBody := TStringStream.Create(REQUEST_BODY);
 
       try
-        Response := HttpClient.Post( URL_Basse + '/'+ FSession +'/start-session',
+        Response := HttpClient.Post( FURLBase+':'+FPorta  + '/'+ FSession +'/start-session',
                                      RequestBody,nil,
                                      TNetHeaders.Create(TNameValuePair.Create('Authorization', 'Bearer ' + RetornoAuth.token))
                                      );
@@ -447,7 +463,7 @@ begin
       RequestBody := TStringStream.Create;
 
       try
-        Response := HttpClient.Get( URL_Basse + '/'+ FSession +'/status-session',
+        Response := HttpClient.Get( FURLBase+':'+FPorta  + '/'+ FSession +'/status-session',
                                      nil,
                                      TNetHeaders.Create(TNameValuePair.Create('Authorization', 'Bearer ' + RetornoAuth.token))
                                      );

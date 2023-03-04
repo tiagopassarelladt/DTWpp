@@ -127,9 +127,11 @@ end;
 
 procedure TForm1.configuraComponente;
 begin
-     DTWpp1.Session   := edtSession.Text;
-     DTWpp1.SecretKey := edtSecretKey.Text;
+     DTWpp1.Session       := edtSession.Text;
+     DTWpp1.SecretKey     := edtSecretKey.Text;
      DTWpp1.CaminhoQrCode := 'C:\TEMP\';
+     DTWpp1.URLBase       := 'http:www.dtloja.com.br';
+     DTWpp1.Porta         := '30000';
 end;
 
 end.
