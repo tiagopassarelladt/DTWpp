@@ -2,11 +2,13 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/12/31 14:11:17.000.608,=rtl.dcp</Transaction>
-    <Transaction>2022/12/31 14:11:24.000.824,C:\Users\tiago\OneDrive\Documentos\Embarcadero\Studio\Projects\DTWpp.dproj=C:\Users\tiago\OneDrive\Documentos\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
-    <Transaction>2022/12/31 14:11:46.000.279,C:\Users\tiago\Dropbox\Componentes\DTWpp\DTWpp.dproj=C:\Users\tiago\OneDrive\Documentos\Embarcadero\Studio\Projects\DTWpp.dproj</Transaction>
+    <Transaction>2022/12/31 14:11:24.000.824,C:\Users\tiago\OneDrive\Documentos\Embarcadero\Studio\Projects\Package1.dproj=C:\Users\tiago\OneDrive\Documentos\Embarcadero\Studio\Projects\DTWpp.dproj</Transaction>
+    <Transaction>2022/12/31 14:11:46.000.279,C:\Users\tiago\OneDrive\Documentos\Embarcadero\Studio\Projects\DTWpp.dproj=C:\Users\tiago\Dropbox\Componentes\DTWpp\DTWpp.dproj</Transaction>
     <Transaction>2022/12/31 14:12:41.000.358,=C:\Users\tiago\Dropbox\Componentes\DTWpp\DTWpp.pas</Transaction>
-    <Transaction>2023/01/02 10:22:21.000.430,=soaprtl.dcp</Transaction>
     <Transaction>2023/01/02 10:22:21.000.425,=vcl.dcp</Transaction>
+    <Transaction>2023/01/02 10:22:21.000.430,=soaprtl.dcp</Transaction>
     <Transaction>2023/01/02 10:36:44.000.436,=vclimg.dcp</Transaction>
+    <Transaction>2023/03/09 16:16:52.662,=D:\Dropbox\Componentes\DTWpp\Unit2.pas</Transaction>
+    <Transaction>2023/03/09 16:17:08.153,D:\Dropbox\Componentes\DTWpp\UEmoticons.pas=D:\Dropbox\Componentes\DTWpp\Unit2.pas</Transaction>
   </Transactions>
 </BorlandProject>

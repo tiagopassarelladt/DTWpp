@@ -1,7 +1,7 @@
 package DTWpp;
 
 {$R *.res}
-{$R TDTWpp.dcr}
+{$R 'TDTWpp.dcr'}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -35,6 +35,7 @@ requires
   vclimg;
 
 contains
-  DTWpp in 'DTWpp.pas';
+  DTWpp in 'DTWpp.pas',
+  UEmoticons in 'UEmoticons.pas';
 
 end.
