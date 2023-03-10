@@ -136,7 +136,7 @@ object Form1: TForm1
     Width = 113
     Height = 21
     TabOrder = 9
-    Text = '5535992149704'
+    Text = '5535984240000'
   end
   object edtMensagem: TEdit
     Left = 127

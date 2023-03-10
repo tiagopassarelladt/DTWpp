@@ -37,17 +37,17 @@ object Form1: TForm1
     Caption = 'Token'
   end
   object Image1: TImage
-    Left = 520
+    Left = 539
     Top = 8
-    Width = 226
-    Height = 185
+    Width = 207
+    Height = 169
     Proportional = True
   end
   object msg: TMemo
     Left = 0
-    Top = 207
+    Top = 183
     Width = 758
-    Height = 283
+    Height = 307
     Align = alBottom
     Lines.Strings = (
       'msg')
@@ -84,14 +84,14 @@ object Form1: TForm1
   object edtToken: TEdit
     Left = 294
     Top = 24
-    Width = 220
+    Width = 239
     Height = 21
     Alignment = taCenter
     TabOrder = 4
     Text = '$2b$10$WH19fFabzHTaOA_kF4DfTuAw_KHZ.twN.6AvfTuAjn9Tr17bEylOu'
   end
   object Button2: TButton
-    Left = 111
+    Left = 152
     Top = 51
     Width = 97
     Height = 25
@@ -101,7 +101,7 @@ object Form1: TForm1
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 214
+    Left = 297
     Top = 51
     Width = 99
     Height = 25
@@ -111,7 +111,7 @@ object Form1: TForm1
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 319
+    Left = 443
     Top = 51
     Width = 90
     Height = 25
@@ -121,9 +121,9 @@ object Form1: TForm1
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 8
-    Top = 82
-    Width = 97
+    Left = 417
+    Top = 80
+    Width = 116
     Height = 25
     Cursor = crHandPoint
     Caption = 'Enviar Mensagem'
@@ -131,25 +131,25 @@ object Form1: TForm1
     OnClick = Button5Click
   end
   object edtTelefone: TEdit
-    Left = 111
-    Top = 84
-    Width = 121
+    Left = 8
+    Top = 82
+    Width = 113
     Height = 21
     TabOrder = 9
     Text = '5535992149704'
   end
   object edtMensagem: TEdit
-    Left = 238
-    Top = 84
-    Width = 276
+    Left = 127
+    Top = 82
+    Width = 285
     Height = 21
     TabOrder = 10
     Text = 'testando uma mensagem'
   end
   object Button6: TButton
     Left = 8
-    Top = 113
-    Width = 224
+    Top = 140
+    Width = 171
     Height = 25
     Cursor = crHandPoint
     Caption = 'enviar um arquivo'
@@ -157,9 +157,9 @@ object Form1: TForm1
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 238
-    Top = 111
-    Width = 224
+    Left = 185
+    Top = 140
+    Width = 171
     Height = 25
     Cursor = crHandPoint
     Caption = 'enviar uma imagem'
@@ -167,29 +167,51 @@ object Form1: TForm1
     OnClick = Button7Click
   end
   object Button8: TButton
-    Left = 8
-    Top = 144
-    Width = 224
+    Left = 362
+    Top = 140
+    Width = 171
     Height = 25
+    Cursor = crHandPoint
     Caption = 'Listar emoticons'
     TabOrder = 13
     OnClick = Button8Click
   end
   object Button9: TButton
-    Left = 238
-    Top = 144
-    Width = 224
+    Left = 362
+    Top = 109
+    Width = 171
     Height = 25
-    Caption = 'Enviar but'#245'es de op'#231#245'es'
+    Cursor = crHandPoint
+    Caption = 'Enviar Mensagem com 3 buttons'
     TabOrder = 14
     OnClick = Button9Click
   end
+  object Button10: TButton
+    Left = 8
+    Top = 109
+    Width = 171
+    Height = 25
+    Cursor = crHandPoint
+    Caption = 'Enviar Mensagem com 1 button'
+    TabOrder = 15
+    OnClick = Button10Click
+  end
+  object Button11: TButton
+    Left = 185
+    Top = 109
+    Width = 171
+    Height = 25
+    Cursor = crHandPoint
+    Caption = 'Enviar Mensagem com 2 buttons'
+    TabOrder = 16
+    OnClick = Button11Click
+  end
   object DTWpp1: TDTWpp
-    Left = 232
-    Top = 256
+    Left = 344
+    Top = 288
   end
   object OpenDialog1: TOpenDialog
-    Left = 128
-    Top = 256
+    Left = 264
+    Top = 288
   end
 end
