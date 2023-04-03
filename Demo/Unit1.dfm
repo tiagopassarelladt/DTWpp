@@ -4,8 +4,8 @@ object Form1: TForm1
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Demo - DTWpp'
-  ClientHeight = 490
-  ClientWidth = 758
+  ClientHeight = 489
+  ClientWidth = 745
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -39,14 +39,14 @@ object Form1: TForm1
   object Image1: TImage
     Left = 539
     Top = 8
-    Width = 207
+    Width = 198
     Height = 169
     Proportional = True
   end
   object msg: TMemo
     Left = 0
-    Top = 183
-    Width = 758
+    Top = 182
+    Width = 745
     Height = 307
     Align = alBottom
     Lines.Strings = (
@@ -206,12 +206,12 @@ object Form1: TForm1
     TabOrder = 16
     OnClick = Button11Click
   end
-  object DTWpp1: TDTWpp
-    Left = 344
-    Top = 288
-  end
   object OpenDialog1: TOpenDialog
     Left = 264
     Top = 288
+  end
+  object DTWpp1: TDTWpp
+    Left = 360
+    Top = 248
   end
 end

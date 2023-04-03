@@ -36,6 +36,7 @@ requires
 
 contains
   DTWpp in 'DTWpp.pas',
-  UEmoticons in 'UEmoticons.pas';
+  UEmoticons in 'UEmoticons.pas',
+  UqrCodeWpp in 'UqrCodeWpp.pas' {FrmqrCodeWpp};
 
 end.

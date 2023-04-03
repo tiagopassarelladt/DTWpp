@@ -4,13 +4,12 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DTWpp, Vcl.ExtCtrls,TypInfo,System.Rtti,UEmoticons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DTWpp, Vcl.ExtCtrls,TypInfo,System.Rtti,UEmoticons, System.IOUtils;
 
 type
   TForm1 = class(TForm)
     msg: TMemo;
     Button1: TButton;
-    DTWpp1: TDTWpp;
     edtSession: TEdit;
     edtSecretKey: TEdit;
     Label1: TLabel;
@@ -31,6 +30,7 @@ type
     Button9: TButton;
     Button10: TButton;
     Button11: TButton;
+    DTWpp1: TDTWpp;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -121,7 +121,7 @@ begin
      msg.Lines.Add('qrcode: ' + DTWpp1.RetornoSession.qrcode );
 
      if DTWpp1.RetornoSession.TemQrcode  then
-         Image1.Picture.LoadFromFile( DTWpp1.CaminhoQrCode );
+         Image1.Picture.LoadFromFile( TPath.GetTempPath + DTWpp1.Session + '.png' );
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
@@ -135,7 +135,7 @@ begin
      msg.Lines.Add('qrcode: ' + DTWpp1.RetornoSession.qrcode );
 
      if DTWpp1.RetornoSession.TemQrcode  then
-         Image1.Picture.LoadFromFile( DTWpp1.CaminhoQrCode );
+         Image1.Picture.LoadFromFile( TPath.GetTempPath + DTWpp1.Session + '.png' );
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
@@ -209,7 +209,7 @@ begin
          DTWpp1.SendButtons3Opcoes(edtTelefone.Text,
                             'olá essa é uma mensagem de sua fatura que está disponivel para pagamento',
                             '5535984240000',
-                            'Falar com atendente',
+                            'Falar com atendente ',
                             'https://www.passarellasistemas.com.br',
                             'Acesse nosso site',
                             'Financeiro',
@@ -227,7 +227,6 @@ procedure TForm1.configuraComponente;
 begin
      DTWpp1.Session       := edtSession.Text;
      DTWpp1.SecretKey     := edtSecretKey.Text;
-     DTWpp1.CaminhoQrCode := 'C:\TEMP\';
      DTWpp1.URLBase       := 'http://www.dtloja.com.br';
      DTWpp1.Porta         := '30000';
 end;
